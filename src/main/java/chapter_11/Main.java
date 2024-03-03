@@ -10,6 +10,10 @@ import main.SyntaxUtil;
 public class Main {
     public static void main(String[] args) {
         int number = SyntaxUtil.getIntNumber(SyntaxUtil.ASK_FOR_NUMBER);
+        System.out.println("Число " + (isSimple(number) ? "просте" : "не просте"));
+    }
+
+    private static boolean isSimple(Integer number) {
         boolean res = true;
         if (0 == number % 2) {
             res = false;
@@ -22,6 +26,6 @@ public class Main {
                 }
             }
         }
-        System.out.println("Число " + (res ? "просте" : "не просте"));
+        return res;
     }
 }
