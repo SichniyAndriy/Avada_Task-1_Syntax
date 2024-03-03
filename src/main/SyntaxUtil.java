@@ -35,7 +35,7 @@ public class SyntaxUtil {
         String line;
         Scanner scanner = new Scanner(System.in);
         try {
-            line = scanner.next("0|(^[^0]\\d+)");
+            line = scanner.next("0|(^[^0]\\d*)");
         } catch (InputMismatchException e) {
             throw new RuntimeException(ERROR_NUMBER_INPUT, e);
         }
