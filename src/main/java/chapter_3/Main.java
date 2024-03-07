@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         int num = SyntaxUtil.getIntNumber(SyntaxUtil.ASK_FOR_NUMBER);
 
-        String res = num == 0 ? "Число дорівнює нулю" : num > 0 ? "Число позитивне" : "Число негативне";
+        String res = "Число " + (num == 0 ? "дорівнює нулю" : num > 0 ? "позитивне" : "негативне");
         System.out.println(res);
     }
 }

@@ -10,6 +10,7 @@ public class SyntaxUtil {
     public final static String ASK_FOR_NUMBER = "Введіть число: ";
     public final static String ASK_FOR_FIRST_NUMBER = "Введіть перше число: ";
     public final static String ASK_FOR_SECOND_NUMBER = "Введіть друге число: ";
+
     //FIELDS
     private static final NumberFormat _numberFormatter = NumberFormat.getInstance();
     public final static NumberFormat numberFormatter = _numberFormatter;
@@ -18,8 +19,8 @@ public class SyntaxUtil {
     public static double getDoubleNumber(final String message) {
         System.out.print(message);
         String line;
-        Scanner scanner = new Scanner(System.in);
-        try {
+
+        try (Scanner scanner = new Scanner(System.in)) {
             line = scanner.next("0|(^[^0]\\d+[.,]?\\d*)|(^0?[.,]\\d+)");
             if (line.contains(",")) {
                 line = line.replace(',', '.');
@@ -33,8 +34,8 @@ public class SyntaxUtil {
     public static int getIntNumber(final String message) {
         System.out.print(message);
         String line;
-        Scanner scanner = new Scanner(System.in);
-        try {
+
+        try (Scanner scanner = new Scanner(System.in)) {
             line = scanner.next("0|(^[^0]\\d*)");
         } catch (InputMismatchException e) {
             throw new RuntimeException(ERROR_NUMBER_INPUT, e);

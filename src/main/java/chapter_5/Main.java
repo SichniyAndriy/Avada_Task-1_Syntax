@@ -10,6 +10,6 @@ public class Main {
     public static void main(String[] args) {
         int number = SyntaxUtil.getIntNumber(SyntaxUtil.ASK_FOR_NUMBER);
 
-        System.out.println((number & 1) != 1 ? "Число парне" : "Число непарне");
+        System.out.println("Число " + ((number & 1) != 1 ? "парне" : "непарне"));
     }
 }
