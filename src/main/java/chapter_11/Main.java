@@ -14,18 +14,16 @@ public class Main {
     }
 
     private static boolean isSimple(Integer number) {
-        boolean res = true;
         if (0 == number % 2) {
-            res = false;
+            return false;
         } else {
             int len = (int) Math.sqrt(number);
             for (int i = 3; i <= len; i += 2) {
                 if (0 == number % i) {
-                    res = false;
-                    break;
+                    return false;
                 }
             }
         }
-        return res;
+        return true;
     }
 }
