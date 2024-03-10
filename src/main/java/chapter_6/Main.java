@@ -10,10 +10,8 @@ public class Main {
     public static void main(String[] args) {
         int year = SyntaxUtil.getIntNumber("Введіть рік: ");
         String res = "Рік не високосний";
-        if (0 == year % 100) {
-            if (0 == year % 400) {
-                res = "Рік високосний";
-            }
+        if (0 == year % 100 && 0 == year % 400) {
+            res = "Рік високосний";
         } else if (0 == year % 4) {
             res = "Рік високосний";
         }
